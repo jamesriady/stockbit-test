@@ -1,0 +1,4 @@
+SELECT users.id, users.username, parents.username as parentusername 
+	FROM users 
+LEFT JOIN users parents
+	ON parents.id = users.parent;
