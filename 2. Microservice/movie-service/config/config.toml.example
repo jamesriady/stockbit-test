@@ -1,0 +1,7 @@
+[movie_service]
+base_url        = "http://www.omdbapi.com"
+secret_key      = "secret"
+timeout_in_sec  = "10s"
+
+[grpc]
+port = "8081"

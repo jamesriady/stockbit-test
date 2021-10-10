@@ -1,0 +1,51 @@
+syntax="proto3";
+
+package grpc;
+
+option go_package = "movie-service/delivery/grpc/proto/grpc";
+
+service MovieHandler {
+    rpc FetchMovie (FetchMovieRequest) returns (MovieData);
+}
+
+message MovieData {
+    repeated Movie movies = 1;
+}
+
+message FetchMovieRequest {
+    string title    = 1;
+    int32 page      = 2;
+}
+
+message MovieRating {
+    string source   = 1;
+    string value    = 2;
+}
+
+message Movie {
+    string Title                    = 1;
+    string Year                     = 2;
+    string Rated                    = 3;
+    string Released                 = 4;
+    string Runtime                  = 5;
+    string Genre                    = 6;
+    string Director                 = 7;
+    string Writer                   = 8;
+    string Actors                   = 9;
+    string Plot                     = 10;
+    string Language                 = 11;
+    string Country                  = 12;
+    string Awards                   = 13;
+    string Poster                   = 14;
+    repeated MovieRating Ratings    = 15;
+    string Metascore                = 16;
+    string imdbRating               = 17;
+    string imdbVotes                = 18;
+    string imdbID                   = 19;
+    string Type                     = 20;
+    string DVD                      = 21;
+    string BoxOffice                = 22;
+    string Production               = 23;
+    string Website                  = 24;
+    string Response                 = 25;
+}
